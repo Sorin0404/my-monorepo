@@ -1,0 +1,11 @@
+{
+  "name": "my-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "packageManager": "yarn@4.9.2"
+}
