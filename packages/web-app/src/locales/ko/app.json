@@ -1,0 +1,12 @@
+{
+  "greeting": "안녕하세요",
+  "summary": "TailwindCSS 4.1과 React 19를 사용한 웹 애플리케이션",
+  "button": {
+    "click": "클릭",
+    "alert": "클릭됨"
+  },
+  "combobox": {
+    "placeholder": "프레임워크 선택...",
+    "noFrameworkFound": "프레임워크를 찾을 수 없습니다."
+  }
+}

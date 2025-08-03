@@ -1,5 +1,4 @@
 import {
-  HelloWorld,
   cn,
   Button,
   Command,
@@ -11,12 +10,17 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
+  HelloWorld,
 } from "@my-monorepo/shared";
 import { CheckIcon, ChevronsUpDownIcon } from "lucide-react";
-
+import "./locales/i18n";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { changeLanguage } from "i18next";
 
 function App() {
+  const { t } = useTranslation("app");
+
   const frameworks = [
     {
       value: "next.js",
@@ -46,35 +50,32 @@ function App() {
   return (
     <main className="min-h-screen bg-white p-8 flex flex-col items-center gap-4">
       <HelloWorld />
-      <p className="text-xl text-gray-600">
-        Web Application with TailwindCSS 4.1
-      </p>
+      <p className="text-xl text-gray-600">{t("summary")}</p>
       <Button
         onClick={() => {
-          alert("click!");
+          alert(t("button.alert"));
         }}
       >
-        Click me
+        {t("button.click")}
       </Button>
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
           <Button
             variant="outline"
-            role="combobox"
             aria-expanded={open}
             className="w-[200px] justify-between"
           >
             {value
               ? frameworks.find((framework) => framework.value === value)?.label
-              : "Select framework..."}
+              : t("combobox.placeholder")}
             <ChevronsUpDownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-[200px] p-0">
           <Command>
-            <CommandInput placeholder="Search framework..." />
+            <CommandInput placeholder={t("combobox.placeholder")} />
             <CommandList>
-              <CommandEmpty>No framework found.</CommandEmpty>
+              <CommandEmpty>{t("combobox.noFrameworkFound")}</CommandEmpty>
               <CommandGroup>
                 {frameworks.map((framework) => (
                   <CommandItem
@@ -99,6 +100,14 @@ function App() {
           </Command>
         </PopoverContent>
       </Popover>
+      <div className="flex gap-2">
+        <Button variant={"secondary"} onClick={() => changeLanguage("ko")}>
+          한국어
+        </Button>
+        <Button variant={"secondary"} onClick={() => changeLanguage("en")}>
+          English
+        </Button>
+      </div>
     </main>
   );
 }

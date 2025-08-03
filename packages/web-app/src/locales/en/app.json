@@ -1,0 +1,12 @@
+{
+  "greeting": "Hello",
+  "summary": "Web Application with TailwindCSS 4.1 and React 19",
+  "button": {
+    "click": "Click me",
+    "alert": "clicked"
+  },
+  "combobox": {
+    "placeholder": "Select framework...",
+    "noFrameworkFound": "No framework found."
+  }
+}
