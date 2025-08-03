@@ -38,46 +38,6 @@ function App() {
       value: "astro",
       label: "Astro",
     },
-    {
-      value: "next.js1",
-      label: "Next.js1",
-    },
-    {
-      value: "sveltekit1",
-      label: "SvelteKit1",
-    },
-    {
-      value: "nuxt.js1",
-      label: "Nuxt.js1",
-    },
-    {
-      value: "remix1",
-      label: "Remix1",
-    },
-    {
-      value: "astro1",
-      label: "Astro1",
-    },
-    {
-      value: "next.js2",
-      label: "Next.js2",
-    },
-    {
-      value: "sveltekit2",
-      label: "SvelteKit2",
-    },
-    {
-      value: "nuxt.js2",
-      label: "Nuxt.js2",
-    },
-    {
-      value: "remix2",
-      label: "Remix2",
-    },
-    {
-      value: "astro2",
-      label: "Astro2",
-    },
   ];
 
   const [open, setOpen] = useState(false);
@@ -89,7 +49,13 @@ function App() {
       <p className="text-xl text-gray-600">
         Web Application with TailwindCSS 4.1
       </p>
-      <Button>Click me</Button>
+      <Button
+        onClick={() => {
+          alert("click!");
+        }}
+      >
+        Click me
+      </Button>
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
           <Button

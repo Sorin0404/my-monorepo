@@ -1,4 +1,4 @@
-import { HelloWorld } from "@my-monorepo/shared";
+import { Button, HelloWorld } from "@my-monorepo/shared";
 
 function App() {
   return (
@@ -7,6 +7,14 @@ function App() {
       <p className="text-xl text-gray-600">
         Desktop Application with TailwindCSS 4.1
       </p>
+      <Button
+        variant={"default"}
+        onClick={() => {
+          alert("click!");
+        }}
+      >
+        Click me
+      </Button>
     </main>
   );
 }
